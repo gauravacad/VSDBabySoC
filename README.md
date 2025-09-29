@@ -52,7 +52,8 @@ However, the hardware understands only the binaries, and hence an abstract inter
 Once RTL description is done, then the process of conversion of RTL to physical chip is done.
 Here **RISC-V core (rvmyth)** is an open architecture enables us to create processors highly tailored for specific computational challenges. 
 
-<img width="1792" height="1212" alt="image" src="https://github.com/user-attachments/assets/7486ba6b-e348-4dfa-820b-40f2864c7f5e" />
+<img width="1812" height="1240" alt="image" src="https://github.com/user-attachments/assets/869b0def-220a-49db-bbda-cd3ff7611e59" />
+
 
  [Basic Architecture of the VSDBabySoC — SoC based on RVMYTH ](https://github.com/manili/VSDBabySoC/tree/main)
 ## Installtion and Overview of Sandpiper
