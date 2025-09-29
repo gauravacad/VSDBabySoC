@@ -10,6 +10,21 @@ VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 - The Chip Layout for the avsdac_3v3. It has 10 Bit dataline. 
 <img width="811" height="561" alt="image" src="https://github.com/user-attachments/assets/d7928214-13d4-486e-aa96-a7f177b84536" />
 
+## Specification 
+
+> 1 **IP Block Design Specifications**
+
+| Name   | Pin No. | I/O | Description                          |
+|--------|---------|-----|--------------------------------------|
+| D[0:9] | 1–10    | I   | Digital inputs                       |
+| EN     | 11      | I   | Enable pin                           |
+| VDD    | 12      | I   | Digital power supply (1.8 V)         |
+| VSS    | 13      | I   | Digital ground                       |
+| OUT    | 14      | O   | DAC analog voltage output            |
+| VDDA   | 15      | I   | Analog voltage supply (3.3 V)        |
+| VSSA   | 16      | I   | Analog ground                        |
+| VREFH  | 17      | I   | Reference voltage high for DAC (3.3 V)|
+| VREFL  | 18      | I   | Reference voltage low for DAC        |
 
 ## RISCV: RVMYTH CORE
 - A RISC-V ISA is defined as a base integer ISA, which must be present in any implementation, plus optional extensions to the base ISA. Each base integer instruction set is characterized by
