@@ -10,11 +10,14 @@ VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 - In real world, most of the data available is in the analog form in nature.
 - Thereby we have two types of converters `analog` to digital` converter (ADC) and `digital to analog` converter (DAC).
 - These two converting interfaces are essential to obtain the required operations of a processor (here RVMYTH) to manipulate the data of any electronic equipment.
--
-### 2.1 Implementation of 10Bit Potentiometric DAC
-- There are two commonly used `DAC conversions` (1)  `Weighed resistors method` and (2) `R-2R ladder network method`. 
+
+### 2.1. Implementation of 10Bit Potentiometric DAC
+- There are two commonly used `DAC conversions` (1) `Weighed resistors method` and (2) `R-2R ladder network method`. 
 - The Principle here is to divide the iput voltage into N different output voltage values in the range of VREFH and VREFL for a N-Bit DAC.
 - The design avsdac_3v3 DAC here achieve this by a simple resistors in series.
+- The Chip Layout for the avsdac_3v3. It has 10 Bit dataline. with dimension 195.58 um x 117.45 um.
+- 
+  // <img width="811" height="561" alt="image" src="https://github.com/user-attachments/assets/d7928214-13d4-486e-aa96-a7f177b84536" />
 
   <img width="674" height="694" alt="image" src="https://github.com/user-attachments/assets/fda1fc91-b040-48b8-ab63-1dde7c42b72e" />
 
@@ -22,8 +25,7 @@ VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 ---
   
 4. ### IP specification : avsdac_3v3 operating Modes ( Fclk = 1 MHz)
-- The Chip Layout for the avsdac_3v3. It has 10 Bit dataline. 
-<img width="811" height="561" alt="image" src="https://github.com/user-attachments/assets/d7928214-13d4-486e-aa96-a7f177b84536" />
+
 
 ## Specification 
 The design library used is sky130. This design is implemented using xschem, and ngspice is used to run the simulations & verify the circuitry. For circuit layout implementation, Magic will be used. 
