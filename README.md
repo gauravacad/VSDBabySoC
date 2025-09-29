@@ -86,6 +86,19 @@ $ gtkwave rvmyth_pll.vcd
 
 - Icarus Verilog is a Verilog simulation and synthesis tool.
 
+## LAB WORK VSDBABYSoC
+
+``` bash
+$ cd VSDBabySoC/
+$ python -m venv my-venv
+$ python3 -m venv my-venv
+$ my-venv/bin/pip install pyyaml click sandpiper-saas
+$ make pre_synth_sim
+$ source my-venv/bin/activate
+$ make pre_synth_sim
+``` 
+
+
 3. GTKWave:
 
 - GTKWave is a waveform viewer.
