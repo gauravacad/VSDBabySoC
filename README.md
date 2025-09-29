@@ -7,6 +7,8 @@ VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 - Purpose: The VSDBabySoC's primary purpose is to integrate and evaluate multiple open-source IPs cores and to calibrate its analog section.
   
 ### IP specification : avsdac_3v3 operating Modes ( Fclk = 1 MHz)
+- The Chip Layout for the avsdac_3v3. It has 10 Bit dataline. 
+<img width="811" height="561" alt="image" src="https://github.com/user-attachments/assets/d7928214-13d4-486e-aa96-a7f177b84536" />
 
 
 ## RISCV: RVMYTH CORE
@@ -15,7 +17,7 @@ VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
    - Corresponding size of the address space
    - Number of integer registers (32 in RISC-V)
    - 
-<img width="4737" height="312" alt="image" src="https://github.com/user-attachments/assets/f842173b-83e8-4efb-9921-90fb8e0fe105" />
+
 
 Here **RISC-V core (rvmyth)** is an open architecture enables us to create processors highly tailored for specific computational challenges. 
 
