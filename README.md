@@ -1,4 +1,4 @@
-# VSDBabySoC
+1. # VSDBabySoC
 VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 
 - The **Key Components**: Includes a **current source**, **a PLL (avsdpll\_1v8)**, an embedded **RISC-V core (rvmyth)**, an **ADC/DAC (avsddac\_3v3)**, and an **SPI interface**.
@@ -6,12 +6,18 @@ VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 - **Interconnections**: Arrows and labels illustrate the flow of signals and power between these blocks, such as clock signals (CLK) and data paths (B[3:0], D[9:0]).
 - Purpose: The VSDBabySoC's primary purpose is to integrate and evaluate multiple open-source IPs cores and to calibrate its analog section.
   
-### IP specification : avsdac_3v3 operating Modes ( Fclk = 1 MHz)
+2. ## Purpose of Digital to Analog converted (DAC)
+- In real world, most of the data available is in the analog form in nature.
+- Thereby we have two types of converters `analog` to digital` converter (ADC) and `digital to analog` converter (DAC).
+- These two converting interfaces are essential to obtain the required operations of a processor (here RVMYTH) to manipulate the data of any electronic equipment.
+- There are two commonly used `DAC conversions` – `Weighed resistors method` and `R-2R ladder network method`. 
+  
+4. ### IP specification : avsdac_3v3 operating Modes ( Fclk = 1 MHz)
 - The Chip Layout for the avsdac_3v3. It has 10 Bit dataline. 
 <img width="811" height="561" alt="image" src="https://github.com/user-attachments/assets/d7928214-13d4-486e-aa96-a7f177b84536" />
 
 ## Specification 
-
+The design library used is sky130. This design is implemented using xschem, and ngspice is used to run the simulations & verify the circuitry. For circuit layout implementation, Magic will be used. 
 > 1 **IP Block Design Specifications**
 
 | Name   | Pin No. | I/O | Description                          |
