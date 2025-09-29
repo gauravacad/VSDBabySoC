@@ -22,9 +22,7 @@ VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 
   <img width="674" height="694" alt="image" src="https://github.com/user-attachments/assets/fda1fc91-b040-48b8-ab63-1dde7c42b72e" />
 
-                                     *Basic Architecture of Potentiometric DAC*
-  
-Reference: This above work builds upon the potentiometric DAC design from [vsdip/avsddac_3v3_sky130_v1](https://github.com/vsdip/avsddac_3v3_sky130_v1) :contentReference[oaicite:2]{index=2}.
+                                     *Basic Architecture of Potentiometric DAC* [vsdip/avsddac_3v3_sky130_v1](https://github.com/vsdip/avsddac_3v3_sky130_v1)
 ---
   
 4. ### IP specification : avsdac_3v3 operating Modes ( Fclk = 1 MHz)
