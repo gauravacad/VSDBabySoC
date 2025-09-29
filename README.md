@@ -1,10 +1,23 @@
 # VSDBabySoC
-VSDBabySoC is a small yet powerful RISCV-based SoC. The main purpose of designing such a small SoC is to test three open-source IP cores .
+VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
+
+- The **Key Components**: Includes a **current source**, **a PLL (avsdpll\_1v8)**, an embedded **RISC-V core (rvmyth)**, an **ADC/DAC (avsddac\_3v3)**, and an **SPI interface**.
+- **Voltage Domains**: The SoC operates with distinct voltage domains: a 1.8V domain and a 3.3V domain, clearly indicating power supply requirements for different components.
+- **Interconnections**: Arrows and labels illustrate the flow of signals and power between these blocks, such as clock signals (CLK) and data paths (B[3:0], D[9:0]).
+- Purpose: The VSDBabySoC's primary purpose is to integrate and evaluate multiple open-source IPs cores and to calibrate its analog section.
+  
+### IP specification : avsdac_3v3 operating Modes ( Fclk = 1 MHz)
 
 
-RISC-V's open architecture enables us to create processors highly tailored for specific
-computational challenges. 
+## RISCV: RVMYTH CORE
+- A RISC-V ISA is defined as a base integer ISA, which must be present in any implementation, plus optional extensions to the base ISA. Each base integer instruction set is characterized by
+   - Width of the integer registers (XLEN)
+   - Corresponding size of the address space
+   - Number of integer registers (32 in RISC-V)
+   - 
+<img width="4737" height="312" alt="image" src="https://github.com/user-attachments/assets/f842173b-83e8-4efb-9921-90fb8e0fe105" />
 
+Here **RISC-V core (rvmyth)** is an open architecture enables us to create processors highly tailored for specific computational challenges. 
 
 ## Installtion and Overview of Sandpiper
 - SandPiper is a code generator that generates readable, well-structured, Verilog or SystemVerilog code from the given TL-Verilog code.
@@ -34,8 +47,8 @@ $ gtkwave rvmyth_pll.vcd
 
 2. Icarus Verilog:
 
-Icarus Verilog is a Verilog simulation and synthesis tool.
+- Icarus Verilog is a Verilog simulation and synthesis tool.
 
 3. GTKWave:
 
-GTKWave is a waveform viewer.
+- GTKWave is a waveform viewer.
