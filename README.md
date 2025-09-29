@@ -39,7 +39,7 @@ The design library used is sky130. This design is implemented using xschem, and 
 | VREFH  | 17      | I   | Reference voltage high for DAC (3.3 V)|
 | VREFL  | 18      | I   | Reference voltage low for DAC        |
 
-## 2.2 RISCV: [RVMYTH CORE(https://www.makerchip.com/)
+## 2.2 RISCV: [RVMYTH CORE](https://www.makerchip.com/)
 - A RISC-V ISA is defined as a base integer ISA, which must be present in any implementation, plus optional extensions to the base ISA. Each base integer instruction set is characterized by
    - Width of the integer registers (XLEN)
    - Corresponding size of the address space
