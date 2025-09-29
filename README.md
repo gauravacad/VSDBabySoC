@@ -44,11 +44,17 @@ The design library used is sky130. This design is implemented using xschem, and 
    - Width of the integer registers (XLEN)
    - Corresponding size of the address space
    - Number of integer registers (32 in RISC-V)
-   - 
 
-
+### 2.2.1 Components of a SoC
+The chip has the core where all the logic, Macros, Foundary IP's lies and pads for signal I/O and the total die after the floorplanning, placement, routing etc are completed.
+Interface between an application and actual hardware is brought in by the system software.
+However, the hardware understands only the binaries, and hence an abstract interface which starts with Intruction Set Architecture, then the RTL Description.
+Once RTL description is done, then the process of conversion of RTL to physical chip is done.
 Here **RISC-V core (rvmyth)** is an open architecture enables us to create processors highly tailored for specific computational challenges. 
 
+<img width="1792" height="1212" alt="image" src="https://github.com/user-attachments/assets/7486ba6b-e348-4dfa-820b-40f2864c7f5e" />
+
+ [Basic Architecture of the VSDBabySoC — SoC based on RVMYTH ](https://github.com/manili/VSDBabySoC/tree/main)
 ## Installtion and Overview of Sandpiper
 - SandPiper is a code generator that generates readable, well-structured, Verilog or SystemVerilog code from the given TL-Verilog code.
 - SandPiper SaaS Edition runs as a microservice in the cloud to support easy open-source development. Install Sanpiper SaaS Edition for this project.
