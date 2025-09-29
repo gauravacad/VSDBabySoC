@@ -12,8 +12,8 @@ VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 - These two converting interfaces are essential to obtain the required operations of a processor (here RVMYTH) to manipulate the data of any electronic equipment.
 -
 ### 2.1 Implementation of 10Bit Potentiometric DAC
-- There are two commonly used `DAC conversions` – `Weighed resistors method` and `R-2R ladder network method`. 
-- The basic Principle here is to divide the iput voltage into N different output voltage values in the range of VREFH and VREFL for a N-Bit DAC.
+- There are two commonly used `DAC conversions` (1)  `Weighed resistors method` and (2) `R-2R ladder network method`. 
+- The Principle here is to divide the iput voltage into N different output voltage values in the range of VREFH and VREFL for a N-Bit DAC.
 - The design avsdac_3v3 DAC here achieve this by a simple resistors in series.
 
   <img width="674" height="694" alt="image" src="https://github.com/user-attachments/assets/fda1fc91-b040-48b8-ab63-1dde7c42b72e" />
