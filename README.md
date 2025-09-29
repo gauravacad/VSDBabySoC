@@ -13,7 +13,7 @@ VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 
 ### 2.1. Implementation of 10Bit Potentiometric DAC
 - There are two commonly used `DAC conversions` (1) `Weighed resistors method` and (2) `R-2R ladder network method`. 
-- The Principle here is to divide the iput voltage into N different output voltage values in the range of VREFH and VREFL for a N-Bit DAC.
+- The Principle here is to divide the iput voltage into N different output voltage values in the range of Reference voltage (VREFH, VREFL) for a N-Bit DAC.
 - The design avsdac_3v3 DAC here achieve this by a simple resistors in series.
 - The Chip Layout for the avsdac_3v3. It has 10 Bit dataline. with dimension 195.58 um x 117.45 um.
 - avsdac_3v3 operating Modes with Fclk = 1 MHz.
@@ -24,13 +24,8 @@ VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 
   [Basic Architecture of the Potentiometric DAC — avsddac_3v3_sky130_v1](https://github.com/vsdip/avsddac_3v3_sky130_v1)
 ---
-  
-4. ### IP specification : avsdac_3v3 operating Modes ( Fclk = 1 MHz)
-
-
-## Specification 
+## Specification: avsdac_3v3
 The design library used is sky130. This design is implemented using xschem, and ngspice is used to run the simulations & verify the circuitry. For circuit layout implementation, Magic will be used. 
-> 1 **IP Block Design Specifications**
 
 | Name   | Pin No. | I/O | Description                          |
 |--------|---------|-----|--------------------------------------|
@@ -44,7 +39,7 @@ The design library used is sky130. This design is implemented using xschem, and 
 | VREFH  | 17      | I   | Reference voltage high for DAC (3.3 V)|
 | VREFL  | 18      | I   | Reference voltage low for DAC        |
 
-## RISCV: RVMYTH CORE
+## 2.2 RISCV: [RVMYTH CORE(https://www.makerchip.com/)
 - A RISC-V ISA is defined as a base integer ISA, which must be present in any implementation, plus optional extensions to the base ISA. Each base integer instruction set is characterized by
    - Width of the integer registers (XLEN)
    - Corresponding size of the address space
