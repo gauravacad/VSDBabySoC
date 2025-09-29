@@ -16,12 +16,15 @@ VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 - The Principle here is to divide the iput voltage into N different output voltage values in the range of VREFH and VREFL for a N-Bit DAC.
 - The design avsdac_3v3 DAC here achieve this by a simple resistors in series.
 - The Chip Layout for the avsdac_3v3. It has 10 Bit dataline. with dimension 195.58 um x 117.45 um.
-- 
-  // <img width="811" height="561" alt="image" src="https://github.com/user-attachments/assets/d7928214-13d4-486e-aa96-a7f177b84536" />
+- avsdac_3v3 operating Modes with Fclk = 1 MHz.
+  
+  <img width="811" height="561" alt="image" src="https://github.com/user-attachments/assets/d7928214-13d4-486e-aa96-a7f177b84536" />
 
   <img width="674" height="694" alt="image" src="https://github.com/user-attachments/assets/fda1fc91-b040-48b8-ab63-1dde7c42b72e" />
 
- *Basic Architecture of Potentiometric DAC*
+                                     *Basic Architecture of Potentiometric DAC*
+  
+Reference: This above work builds upon the potentiometric DAC design from [vsdip/avsddac_3v3_sky130_v1](https://github.com/vsdip/avsddac_3v3_sky130_v1) :contentReference[oaicite:2]{index=2}.
 ---
   
 4. ### IP specification : avsdac_3v3 operating Modes ( Fclk = 1 MHz)
