@@ -1,6 +1,10 @@
 ## I What is a SoC?
 - In general an Integrated Circuit (a.ak IC) that integrates multiple components of asystem onto a single chip is SOC (System-on-Chip).
 - In addition to IC, SoC consists of software and interconnection structure for integration.
+- SOCs usually have die sizes of about 10-15 mm on aside like our babySOC as shown in picture
+
+<img width="1461" height="1467" alt="image" src="https://github.com/user-attachments/assets/5f5698c1-86e4-4eb1-ade0-db6e1051f14b" />
+
 
 ## II What are the elements of a SoC?
 > These components typically include:
@@ -16,6 +20,17 @@
 - Software – OS, Application, etc.
 - Firmware
 
+<img width="908" height="642" alt="image" src="https://github.com/user-attachments/assets/3704c031-d2a2-446c-b9e9-0dfca6eed8d6" />
+
+Components of a System-on-Chip
+
+## SoC Design Tradeoffs:- Five Big Issues for SoC Design
+- Time: Cycle time relates to Performance
+- Chip Area: It also determines the IC cost
+- Power Consumption: Performance as well as Implementation
+- Reliability: It relates to deep submicron effects.
+- Configurability: Standardization in manufacturingand customization for application.
+- 
 ## III What is the difference between a processor and a microprocessor?
 
 
@@ -165,7 +180,11 @@ $ my-venv/bin/pip install pyyaml click sandpiper-saas
 $ make pre_synth_sim
 $ source my-venv/bin/activate
 $ make pre_synth_sim
-``` 
+```
+
+## Introduction to ABI
+An Application Binary Interface is a set of rules enforced by the Operating System on a specific architecture. So, Linker converts relocatable machine code to absolute machine code via ABI interface specific to the architecture of machine.
+So, it is system call interface used by the application program to access the registers specific to architecture. Overhere the architecture is RISC-V, so to access 32 registers of RISC-V below is the table which shows the calling convention (ABI name) given to registers for the application programmer to use. 
 
 
 3. GTKWave:
