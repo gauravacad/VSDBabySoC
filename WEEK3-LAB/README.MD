@@ -27,7 +27,7 @@
 - Setup/hold issues or mismatches must be investigated.
 - **Deliverable**: Documented comparison of RTL vs GLS timing in GTKWave screenshots.
 
-5. Documentation (Week 3 Report) Include:
+### 5. Documentation (Week 3 Report) Include:
 - Overview of SoC modules (RISC-V core, PLL, DAC, top module).
 - RTL simulation steps & screenshots.
 - Synthesis flow and netlist generation.
