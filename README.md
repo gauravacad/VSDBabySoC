@@ -1,3 +1,72 @@
+## I What is a SoC?
+- In general an Integrated Circuit (a.ak IC) that integrates multiple components of asystem onto a single chip is SOC (System-on-Chip).
+- In addition to IC, SoC consists of software and interconnection structure for integration.
+
+## II What are the elements of a SoC?
+> These components typically include:
+- Processor cores -  CPU, GPU, DSP, etc.
+- Memory - RAM, ROM, Cache.
+- Appilication Binary Interface (ABI).
+- Peripherals – USB, UART, SPI, I2C, etc.
+- On-chip interconnection (busses, network, AMBA (AXI, AHB, APB), Network-on-Chip (NoC), etc.)
+- Power Management – Voltage regulators, clock management.
+- AI/O interfaces – GPIOs, ADC/DAC, etc.
+- Custom Logic – Application-specific circuits (e.g., image processors, ML accelerators).
+- if mixed signal soc then Analog circuits ae there.
+- Software – OS, Application, etc.
+- Firmware
+
+## III What is the difference between a processor and a microprocessor?
+
+
+## IV What is a computer architecture? 
+
+
+<img width="930" height="347" alt="image" src="https://github.com/user-attachments/assets/914844ad-7cf5-4091-b2c2-e34ad268c3a2" />
+
+Figure 1 General computer architecture with minimum of elements (global hardware view; Dec. = Decoder)
+
+---
+
+<img width="583" height="755" alt="image" src="https://github.com/user-attachments/assets/faf85613-df36-4722-aea4-914f65632a82" />
+
+---
+
+<img width="654" height="669" alt="image" src="https://github.com/user-attachments/assets/be13f580-f93e-4192-b82e-04235b90bc9f" />
+
+Steps in designing a SoC
+
+<img width="309" height="37" alt="image" src="https://github.com/user-attachments/assets/c0233329-c0e1-4678-8648-bd335087b6a3" />
+
+
+<img width="724" height="146" alt="image" src="https://github.com/user-attachments/assets/440820e0-f198-4428-ae84-bbc88f5b4cd0" />
+Logic blocks of a typical processor
+
+<img width="719" height="259" alt="image" src="https://github.com/user-attachments/assets/2af7bea0-082d-4f96-830f-2bd3281fabfe" />
+Five-stage RISC processor pipeline
+
+
+<img width="894" height="101" alt="image" src="https://github.com/user-attachments/assets/1656f542-0766-428b-84aa-3788e5f2e566" />
+
+The die size of a SoC, expressed in mm^2 , depends on the technology used. As indicated above, a wafer will contain multiple dies, 
+and the die number (dies-per-wafer) represents the ratio of the size of the wafer to the size of a die within it:
+
+<img width="491" height="112" alt="image" src="https://github.com/user-attachments/assets/c045efaf-7809-483e-ad3c-b3f39a926dcd" />
+
+
+## Pipeline Latency and Throughput
+
+
+## System-on-Chip Costs
+
+
+
+## SoC-based devices
+
+
+<img width="585" height="564" alt="image" src="https://github.com/user-attachments/assets/0a91c063-fec9-4e37-8be5-76d0573d4f76" />
+
+
 1. # VSDBabySoC
 VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 
