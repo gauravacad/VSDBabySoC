@@ -170,6 +170,32 @@ $ gtkwave rvmyth_pll.vcd
 
 - Icarus Verilog is a Verilog simulation and synthesis tool.
 
+
+## RVMYTH CORE SIMULATION
+I tried the individual component to simulate and later synthesis to understand the BABYVSDsoc completely. In that task when I simulated the files the RTL anaysis is mathching the 
+
+
+## LAB TASK WORK VSDBABYSoC
+
+### 1. Requirements
+Ensure you have Icarus Verilog installed for compilation and GTKWave for viewing waveform files. This project assumes a Unix-like environment (macOS/Linux).
+Step1. Clone the given [repo](https://github.com/hemanthkumardm/SFAL-VSD-SoC-Journey/tree/main/12.%20VSDBabySoC%20Project) or set up the directory structure as follows:
+
+VSDBabySoC/
+├── src/
+│   ├── include/
+│   │   ├── sandpiper.vh
+│   │   └── other header files...
+│   ├── module/
+│   │   ├── vsdbabysoc.v      # Top-level module integrating all components
+│   │   ├── rvmyth.v          # RISC-V core module
+│   │   ├── avsdpll.v         # PLL module
+│   │   ├── avsddac.v         # DAC module
+│   │   └── testbench.v       # Testbench for simulation
+└── output/
+└── compiled_tlv/         # Holds compiled intermediate files if needed
+
+
 ## LAB WORK VSDBABYSoC
 
 ``` bash
