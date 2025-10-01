@@ -70,7 +70,27 @@ A **Digital-to-Analog Converter (DAC)** converts a **digital signal into an anal
 - High-speed DACs are critical in **mobile communications**.  
 - Ultra-high-speed DACs are used in **optical communication systems**.  
 
+# VSDBabySoC Modeling
+Please note that in the following sections we will mention some repos that we used to model the SoC. However the main source code is resided in [Source-Code Directory](src) and these modules are in [Modules Sub-Directory](src/module).
 
+## RVMYTH modeling
+
+As we mentioned in [What is RVMYTH](#what-is-rvmyth) section, RVMYTH is designed and created by the TL-Verilog language. So we need a way for compile and trasform it to the Verilog language and use the result in our SoC. Here the `sandpiper-saas` could help us do the job.
+[Here](https://github.com/shivanishah269/risc-v-core) is the repo we used as a reference to model the RVMYTH
+[Second](https://github.com/vsdip/rvmyth_avsddac_interface?tab=readme-ov-file) can also be looked upon for the same.
+
+## PLL and DAC modeling
+
+It is not possible to sythesis an analog design with Verilog, yet. But there is a chance to simulate it using `real` datatype. We will use the following repositories to model the PLL and DAC cores:
+
+  1. [Here](https://github.com/vsdip/rvmyth_avsdpll_interface) is the repo we used as a reference to model the PLL
+  2. [Here](https://github.com/vsdip/rvmyth_avsddac_interface) is the repo we used as a reference to model the DAC
+
+**CAUTION:** In the beginning of the project, we get our verilog model of the PLL from [here](https://github.com/vsdip/rvmyth_avsdpll_interface). However, by proceeding the project to the physical design flow we realize that this model needs a little changes to become sufficient for a real IP core. So we changed it a little and created a new model named `AVSDPLL` based on [this](https://github.com/lakshmi-sathi/avsdpll_1v8) IP
+
+## Step by step modeling walkthrough
+
+In this section we will walk through the whole process of modeling the VSDBabySoC in details. We will increase/decrease the digital output value and feed it to the DAC model so we can watch the changes on the SoC output. Please, note that the following commands are tested on the Ubuntu Bionic (18.04.5) platform and no other OSes.
 
 ### RVMYTH CORE SIMULATION
 I tried the individual component to simulate and later synthesis to understand the BABYVSDsoc completely. In that task when I simulated the files the RTL anaysis is mathching the 
