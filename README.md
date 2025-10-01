@@ -180,7 +180,7 @@ I tried the individual component to simulate and later synthesis to understand t
 ### 1. Requirements
 Ensure you have Icarus Verilog installed for compilation and GTKWave for viewing waveform files. This project assumes a Unix-like environment (macOS/Linux).
 Step1. Clone the given [click here: WEEK-3 LAB](https://github.com/hemanthkumardm/SFAL-VSD-SoC-Journey/tree/main/12.%20VSDBabySoC%20Project) or set up the directory structure as follows:
-```bash
+```verilog
 VSDBabySoC/
 ├── Makefile                 # Build rules (simulation, synthesis, etc.)
 ├── README.md                # Documentation for repo
