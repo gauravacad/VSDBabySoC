@@ -179,21 +179,30 @@ I tried the individual component to simulate and later synthesis to understand t
 
 ### 1. Requirements
 Ensure you have Icarus Verilog installed for compilation and GTKWave for viewing waveform files. This project assumes a Unix-like environment (macOS/Linux).
-Step1. Clone the given [repo](https://github.com/hemanthkumardm/SFAL-VSD-SoC-Journey/tree/main/12.%20VSDBabySoC%20Project) or set up the directory structure as follows:
+Step1. Clone the given [click here: WEEK-3 LAB](https://github.com/hemanthkumardm/SFAL-VSD-SoC-Journey/tree/main/12.%20VSDBabySoC%20Project) or set up the directory structure as follows:
 
 VSDBabySoC/
-├── src/
-│   ├── include/
-│   │   ├── sandpiper.vh
-│   │   └── other header files...
-│   ├── module/
-│   │   ├── vsdbabysoc.v      # Top-level module integrating all components
-│   │   ├── rvmyth.v          # RISC-V core module
-│   │   ├── avsdpll.v         # PLL module
-│   │   ├── avsddac.v         # DAC module
-│   │   └── testbench.v       # Testbench for simulation
-└── output/
-└── compiled_tlv/         # Holds compiled intermediate files if needed
+├── Makefile                 # Build rules (simulation, synthesis, etc.)
+├── README.md                # Documentation for repo
+│
+├── src/                     # Source files
+│   ├── include/             # Header / include files
+│   │   ├── sandpiper.vh     # TL-Verilog to Verilog include
+│   │   └── other headers... # e.g., common defines/macros
+│   │
+│   ├── module/              # Main RTL design modules
+│   │   ├── vsdbabysoc.v     # Top-level SoC integrating all components
+│   │   ├── rvmyth.v         # RISC-V core (RVMyth)
+│   │   ├── avsdpll.v        # PLL module (frequency generator)
+│   │   ├── avsddac.v        # DAC module
+│   │   └── testbench.v      # Testbench for RTL simulation
+│
+├── output/                  # Simulation/synthesis outputs
+│   └── compiled_tlv/        # Compiled TL-Verilog files (from SandPiper)
+│
+└── docs/                    # (optional) Add for documentation, diagrams
+    └── arch_diagram.png     # Example: SoC block diagram
+
 
 
 ## LAB WORK VSDBABYSoC
