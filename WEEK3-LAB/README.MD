@@ -35,8 +35,11 @@
 - Side-by-side analysis of RTL vs GLS.
 - Observations and conclusion.
 
-Run Yosys script:
-## RVMYTH CORE SIMULATION
+---- 
+## BABYVSDsoc
+
+
+### RVMYTH CORE SIMULATION
 I tried the individual component to simulate and later synthesis to understand the BABYVSDsoc completely. In that task when I simulated the files the RTL anaysis is mathching the 
 
 
