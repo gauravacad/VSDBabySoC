@@ -36,8 +36,21 @@
 - Observations and conclusion.
 
 ---- 
-## BABYVSDsoc
+## VSDBabySoC
+VSDBabySoC is a compact RISC-V based System-on-Chip (SoC) designed to integrate and evaluate multiple open-source IP cores along with analog IP.
 
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/869b0def-220a-49db-bbda-cd3ff7611e59" />
+
+
+ [Basic Architecture of the VSDBabySoC — SoC based on RVMYTH ](https://github.com/manili/VSDBabySoC/tree/main)
+
+
+### Key Components
+- **PLL (avsdpll_1v8)**
+- **RISC-V Core (rvmyth)**
+- **DAC (avsddac_3v3) / ADC**
+- **SPI Interface**
+- **Current Source**
 
 ### RVMYTH CORE SIMULATION
 I tried the individual component to simulate and later synthesis to understand the BABYVSDsoc completely. In that task when I simulated the files the RTL anaysis is mathching the 
