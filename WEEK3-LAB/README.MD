@@ -1,10 +1,41 @@
 # VSDBabySoC Simulation and Syntheis 
 ## Week 3 LAB Task – VSDBabySoC
+
 ### 1. Basic RTL Simulation
 - **Goal**: Verify functionality of the SoC design before synthesis.
+- **outcome**: Functional RTL waveform in GTKWave.
 - **Tools**: iverilog and gtkwave
 - **Steps**: Compile the RTL + Testbench:
 
+### 2. Synthesis with Yosys
+- **Goal**: Convert RTL into a gate-level netlist using sky130_fd_sc_hd library.
+- **outcome**: Synthesized gate-level netlist (vsdbabysoc_netlist.v).
+- **Tools**: Yosys, Sky130 PDK standard cell library.
+- **Steps**: Compile the NETLIST + Testbench:
+
+### 3. Gate-Level Simulation (GLS)
+- **Goal**: Verify functionality of synthesized netlist against RTL.
+- **outcome**:GLS waveform (dump.vcd).
+- **Tools**: iverilog and gtkwave
+- **Steps**: Compile with netlist, testbench, primitives, and standard cell models
+
+### 4. Analysis – RTL vs GLS Waveforms
+- **Goal**: Compare timing behavior and ensure functional equivalence.
+**Checks:**
+- Functional outputs should match.
+- GLS waveforms may show additional gate delays not present in RTL.
+- Setup/hold issues or mismatches must be investigated.
+- **Deliverable**: Documented comparison of RTL vs GLS timing in GTKWave screenshots.
+
+5. Documentation (Week 3 Report) Include:
+- Overview of SoC modules (RISC-V core, PLL, DAC, top module).
+- RTL simulation steps & screenshots.
+- Synthesis flow and netlist generation.
+- GLS steps & waveforms.
+- Side-by-side analysis of RTL vs GLS.
+- Observations and conclusion.
+
+Run Yosys script:
 ## RVMYTH CORE SIMULATION
 I tried the individual component to simulate and later synthesis to understand the BABYVSDsoc completely. In that task when I simulated the files the RTL anaysis is mathching the 
 
