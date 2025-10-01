@@ -53,6 +53,25 @@ Fig: [Basic Architecture of the VSDBabySoC](https://github.com/manili/VSDBabySoC
 - **Current Source**
 - **Crystal oscilator**
 
+## What is RVMYTH?
+RVMYTH is a simple **RISC-V based CPU**, introduced in a workshop by **RedwoodEDA** and **VSD**.  
+- Developed during a 5-day workshop, where even middle-school students participated in building a processor from scratch.  
+- Uses **TL-Verilog (TLV)** for faster development.  
+- Contributions to the IP are open-source and made by students.  
+
+## What is PLL?
+A **Phase-Locked Loop (PLL)** is a control system that generates an output signal whose **phase is related to the phase of an input signal**.  
+- Widely used for synchronization.  
+- Essential for **clock generation** and **distribution** in SoCs.  
+
+## What is DAC?
+A **Digital-to-Analog Converter (DAC)** converts a **digital signal into an analog signal**.  
+- Enables generation of digitally-defined transmission signals.  
+- High-speed DACs are critical in **mobile communications**.  
+- Ultra-high-speed DACs are used in **optical communication systems**.  
+
+
+
 ### RVMYTH CORE SIMULATION
 I tried the individual component to simulate and later synthesis to understand the BABYVSDsoc completely. In that task when I simulated the files the RTL anaysis is mathching the 
 
