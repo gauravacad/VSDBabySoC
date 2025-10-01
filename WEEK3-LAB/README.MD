@@ -76,8 +76,9 @@ Please note that in the following sections we will mention some repos that we us
 ## RVMYTH modeling
 
 As we mentioned in [What is RVMYTH](#what-is-rvmyth) section, RVMYTH is designed and created by the TL-Verilog language. So we need a way for compile and trasform it to the Verilog language and use the result in our SoC. Here the `sandpiper-saas` could help us do the job.
-[Here](https://github.com/shivanishah269/risc-v-core) is the repo we used as a reference to model the RVMYTH
-[Second](https://github.com/vsdip/rvmyth_avsddac_interface?tab=readme-ov-file) can also be looked upon for the same.
+
+1. [Here](https://github.com/shivanishah269/risc-v-core) is the repo we used as a reference to model the RVMYTH
+2. [Also](https://github.com/vsdip/rvmyth_avsddac_interface?tab=readme-ov-file) can also be looked upon for the same.
 
 ## PLL and DAC modeling
 
