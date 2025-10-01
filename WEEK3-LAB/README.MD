@@ -41,7 +41,7 @@ VSDBabySoC is a compact RISC-V based System-on-Chip (SoC) designed to integrate 
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/869b0def-220a-49db-bbda-cd3ff7611e59" />
 
-            [Basic Architecture of the VSDBabySoC — SoC based on RVMYTH](https://github.com/manili/VSDBabySoC/tree/main)
+            [Basic Architecture of the VSDBabySoC](https://github.com/manili/VSDBabySoC/tree/main)
 
 ---
 
