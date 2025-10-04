@@ -133,11 +133,41 @@ It is not possible to sythesis an analog design with Verilog, yet. But there is 
   1. [Here](https://github.com/vsdip/rvmyth_avsdpll_interface) is the repo we used as a reference to model the PLL
   2. [Here](https://github.com/vsdip/rvmyth_avsddac_interface) is the repo we used as a reference to model the DAC
 
-**CAUTION:** In the beginning of the project, we get our verilog model of the PLL from [here](https://github.com/vsdip/rvmyth_avsdpll_interface). However, by proceeding the project to the physical design flow we realize that this model needs a little changes to become sufficient for a real IP core. So we changed it a little and created a new model named `AVSDPLL` based on [this](https://github.com/lakshmi-sathi/avsdpll_1v8) IP
+**CAUTION:** In the beginning of the project, we get our verilog model of the PLL from [here](https://github.com/vsdip/rvmyth_avsdpll_interface). However, by proceeding the project to the physical design flow we realize that this model needs a little changes to become sufficient for a real IP core. So we changed it a little and created a new model named `AVSDPLL` based on [this](https://github.com/lakshmi-sathi/avsdpll_1v8) IP.
 
 
-# BABYSoC Modelling 
+# Step by step modeling walkthrough
+## Cloning , Setup and  Directory structure
+- Clone or set up the directory structure as follows:
+ 
+### STEP 1. To begin, clone the VSDBabySoC repository using the following command:
+```
+$ git clone https://github.com/manili/VSDBabySoC.git
+$ cd ~/vcd/VSDBabySoC/
+$ ls VSDBabySoC/
+images  LICENSE  Makefile  README.md  src
+```
+### STEP2: TLV to Verilog Conversion for RVMYTH
+Initially, you will see only the rvmyth.tlv file inside src/module/, since the RVMYTH core is written in TL-Verilog.
+To convert it into a .v file for simulation, follow the steps below:
+🔧 TLV to Verilog Conversion Steps
 
+```
+# Step A: Install python3-venv (if not already installed)
+sudo apt update
+sudo apt install python3-venv python3-pip
+cd VSDBabySoC/
+
+# Step B: Create and activate a virtual environment
+python3 -m venv dv_env
+source sp_env/bin/activate
+
+# Step C: Install SandPiper-SaaS inside the virtual environment
+pip install pyyaml click sandpiper-saas
+
+# Step D: Convert rvmyth.tlv to Verilog
+sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
+```
 
 ``` bash
 
