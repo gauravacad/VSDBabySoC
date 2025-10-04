@@ -149,13 +149,19 @@ Before synthesis, the RTL design was verified using a testbench (testbench.v) th
 ``` bash
 $ cd ~/vsd/VSDBabySoC/
 $ mkdir -p output/pre_synth_sim
-$ iverilog -o ~/vsd/VSDBabySoC/output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM -I ~/vsd/VSDBabySoC/src/include -I ~/vsd/VSDBabySoC/src/module ~/vsd/VSDBabySoC/src/module/testbench.v
+$ pwd -> `/vsd/VSDBabySoC/`
+$ iverilog -o ./output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM -I ./src/include -I ./src/module ./src/module/testbench.v 
 ```  
 - DPRE_SYNTH_SIM defines the macro PRE_SYNTH_SIM for conditional compilation., which can be used inside Verilog files like: 
 - -I<directory>: Adds an include directory for Verilog source files that use \include "file.v"` directives.
 - if we wont include the -I then it will lands to error for .Vh files and other verilog files which are called by top vsdbabysoc module.
 
 <img width="818" height="219" alt="Image" src="https://github.com/user-attachments/assets/84e05ba5-afcf-45f1-a060-9900a0d918fd" />
+
+- Now after including all the files we have output in the given `/pre_synth_sim` folder
+
+<img width="829" height="252" alt="Image" src="https://github.com/user-attachments/assets/5255cf15-9bd1-4f50-8bf3-da26cbdc4c47" />
+
 
 ``` bash
 
