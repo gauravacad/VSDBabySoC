@@ -63,8 +63,9 @@ Figure 1 General computer architecture with minimum of elements (global hardware
 
 <img width="654" height="669" alt="image" src="https://github.com/user-attachments/assets/be13f580-f93e-4192-b82e-04235b90bc9f" />
 
-Steps in designing a SoC
+> Steps in designing a SoC
 
+- But this include the various cost involved from die manufacturing to design to packaging.
 <img width="309" height="37" alt="image" src="https://github.com/user-attachments/assets/c0233329-c0e1-4678-8648-bd335087b6a3" />
 
 
