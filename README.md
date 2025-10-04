@@ -28,9 +28,27 @@ Components of a System-on-Chip
 - Configurability: Standardization in manufacturingand customization for application.
 - 
 ## III What is the difference between a processor and a microprocessor?
+### 🔸 Key Differences
 
+| **Feature**     | **Processor**                                         | **Microprocessor**                                     |
+|------------------|-------------------------------------------------------|--------------------------------------------------------|
+| **Scope**        | General term for any data-processing unit             | Specific kind of processor on one chip                 |
+| **Form factor**  | Can be multi-chip or multi-component                  | Always a single-chip solution                          |
+| **Examples**     | CPU, GPU, DSP                                         | Intel Core i9, AMD Ryzen, ARM Cortex                   |
+| **Used in**      | Computers, servers, devices                           | PCs, embedded systems, microcontrollers                |
+
+### In Summary
+- All microprocessors are processors, but not all processors are microprocessors.
+- A microprocessor is a specific, modern implementation of a processor – compact and integrated into one chip.
 
 ## IV What is a computer architecture? 
+### 🔸 Key Aspects of Computer Architecture
+
+| **Component**                  | **Description**                                                                 |
+|-------------------------------|---------------------------------------------------------------------------------|
+| **Instruction Set Architecture (ISA)** | The set of instructions a processor can execute. Defines how software controls hardware. |
+| **Microarchitecture**          | The internal design of the processor—how the components are arranged to implement the ISA. |
+| **System Architecture**        | How all hardware components (CPU, memory, I/O) are connected and communicate.   |
 
 
 <img width="930" height="347" alt="image" src="https://github.com/user-attachments/assets/914844ad-7cf5-4091-b2c2-e34ad268c3a2" />
