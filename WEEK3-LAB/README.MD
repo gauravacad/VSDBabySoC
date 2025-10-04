@@ -186,7 +186,15 @@ $ iverilog -o ./output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM -I ./src/
 # Post-synthesis simulation
 The design is synthesised by the yosys and we see the post synthesis simulation to ensure that it matches with the pre synthesis RTL Simulation.
 we use yosys for Synthesizing our design. 
-- Synthesising the Design with the below script step by step
+- Synthesising the Design with the below script step by step. here
+- Inputs:
+- RTL Verilog files (vsdbabysoc.v, rvmyth.v, clk_gate.v)
+- Analog IPs (avsddac.v, avsdpll.v)
+- Technology timing libraries (.lib files- avsdpll.lib etc)
+- Tool: Yosys Open SYnthesis Suite
+- Output: A gate-level netlist (vsdbabysoc_netlist.v)
+
+<img width="559" height="365" alt="Image" src="https://github.com/user-attachments/assets/af93a143-f0ce-4723-8164-8dfb0b8fb455" />
 
 ``` bash
 
@@ -210,9 +218,9 @@ show vsdbabysoc
 ```
 
 ## Debugging the error 
-### Error 1: Missing Include File
 
-- Root Cause: The `rvmyth` core uses `include` directives to import Verilog header files (`.vh`). Yosys was not aware of the `src/include/` directory where these files are located.
-- Resolution: Add the `-I src/include` flag to required read_verilog commands in the Yosys script. This tells Yosys to add that directory to its search path for header files.
-
+- The `rvmyth` core uses `include` directives to import Verilog header files (`.vh`). Yosys was not aware of the `src/include/` directory where these files are located.
+- Add the `-I src/include` flag to required read_verilog commands in the Yosys script. This tells Yosys to add that directory to its search path for header files.
+- In $YOUR_PDK_PATH/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v file we should manually correct endif SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V to endif //SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V.
+- We can simulate with the functional models by passing the FUNCTIONAL define to iverilog. Also we need to set UNIT_DELAY macro to some value. As a result we'll have iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 <THE SOURCE-CODEs   TO BE COMPILED.
 
