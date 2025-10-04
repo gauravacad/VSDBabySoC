@@ -107,7 +107,7 @@ VSDBabySoC/
 ```
 
 ## LAB WORK VSDBABYSoC
-
+1. Pre-requisites:
 ``` bash
 $ cd VSDBabySoC/
 $ python -m venv my-venv
@@ -134,3 +134,35 @@ It is not possible to sythesis an analog design with Verilog, yet. But there is 
   2. [Here](https://github.com/vsdip/rvmyth_avsddac_interface) is the repo we used as a reference to model the DAC
 
 **CAUTION:** In the beginning of the project, we get our verilog model of the PLL from [here](https://github.com/vsdip/rvmyth_avsdpll_interface). However, by proceeding the project to the physical design flow we realize that this model needs a little changes to become sufficient for a real IP core. So we changed it a little and created a new model named `AVSDPLL` based on [this](https://github.com/lakshmi-sathi/avsdpll_1v8) IP
+
+
+# BABYSoC Modelling 
+
+
+``` bash
+
+read_liberty -lib src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -lib src/lib/avsddac.lib
+read_liberty -lib src/lib/avsdpll.lib
+read_verilog src/module/vsdbabysoc.v
+read_verilog -I src/include src/module/rvmyth.v
+read_verilog -I src/include src/module/clk_gate.v
+read_verilog src/module/avsddac_stub.v
+read_verilog src/module/avsdpll_stub.v
+synth -top vsdbabysoc
+dfflibmap -liberty src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+opt clean -purge
+abc -liberty src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+flatten
+
+write_verilog -noattr reports/vsdbabysoc_netlist.v
+show vsdbabysoc
+```
+
+## Debugging the error 
+### Error 1: Missing Include File
+
+- Root Cause: The `rvmyth` core uses `include` directives to import Verilog header files (`.vh`). Yosys was not aware of the `src/include/` directory where these files are located.
+- Resolution: Add the `-I src/include` flag to required read_verilog commands in the Yosys script. This tells Yosys to add that directory to its search path for header files.
+
+
