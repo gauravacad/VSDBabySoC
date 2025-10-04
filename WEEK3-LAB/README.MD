@@ -173,6 +173,12 @@ $ iverilog -o ./output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM -I ./src/
 
 <img width="1149" height="502" alt="Image" src="https://github.com/user-attachments/assets/287b4432-0c1a-47a9-88a7-c0ae6ad73504" />
 
+
+# Post-synthesis simulation
+The design is synthesised by the yosys and we see the post synthesis simulation to ensure that it matches with the pre synthesis RTL Simulation.
+we use yosys for Synthesizing our design. 
+- Synthesising the Design with the below script step by step
+
 ``` bash
 
 read_liberty -lib src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -185,8 +191,9 @@ read_verilog src/module/avsddac_stub.v
 read_verilog src/module/avsdpll_stub.v
 synth -top vsdbabysoc
 dfflibmap -liberty src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-opt clean -purge
+
 abc -liberty src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+opt clean -purge
 flatten
 
 write_verilog -noattr reports/vsdbabysoc_netlist.v
