@@ -84,7 +84,6 @@ Step1. Clone the given [click here: WEEK-3 LAB](https://github.com/hemanthkumard
 VSDBabySoC/
 ├── Makefile                 # Build rules (simulation, synthesis, etc.)
 ├── README.md                # Documentation for repo
-│
 ├── src/                     # Source files
 │   ├── include/             # Header / include files
 │   │   ├── sandpiper.vh     # TL-Verilog to Verilog include
@@ -105,24 +104,6 @@ VSDBabySoC/
     └── arch_diagram.png     # Example: SoC block diagram
 
 ``` 
-
-## RVMYTH modeling
-
-As we mentioned in [What is RVMYTH](#what-is-rvmyth) section, RVMYTH is designed and created by the TL-Verilog language. So we need a way for compile and trasform it to the Verilog language and use the result in our SoC. Here the `sandpiper-saas` could help us do the job.
-
-1. [Here](https://github.com/shivanishah269/risc-v-core) is the repo we used as a reference to model the RVMYTH
-2. [Here](https://github.com/vsdip/rvmyth_avsddac_interface?tab=readme-ov-file) is similar Repo which can also be looked upon for the same.
-
-## PLL and DAC modeling
-
-It is not possible to sythesis an analog design with Verilog, yet. But there is a chance to simulate it using `real` datatype. We will use the following repositories to model the PLL and DAC cores:
-
-  1. [Here](https://github.com/vsdip/rvmyth_avsdpll_interface) is the repo we used as a reference to model the PLL
-  2. [Here](https://github.com/vsdip/rvmyth_avsddac_interface) is the repo we used as a reference to model the DAC
-
-**CAUTION:** In the beginning of the project, we get our verilog model of the PLL from [here](https://github.com/vsdip/rvmyth_avsdpll_interface). However, by proceeding the project to the physical design flow we realize that this model needs a little changes to become sufficient for a real IP core. So we changed it a little and created a new model named `AVSDPLL` based on [this](https://github.com/lakshmi-sathi/avsdpll_1v8) IP.
-
-
 # Step by step modeling walkthrough
 ## Cloning , Setup and  Directory structure
 - Clone or set up the directory structure as follows:
@@ -146,8 +127,8 @@ sudo apt install python3-venv python3-pip
 cd VSDBabySoC/
 
 # Step B: Create and activate a virtual environment
-python3 -m venv dv_env
-source sp_env/bin/activate
+python3 -m venv my_env
+source my_venv/bin/activate
 
 # Step C: Install SandPiper-SaaS inside the virtual environment
 pip install pyyaml click sandpiper-saas
