@@ -104,20 +104,7 @@ VSDBabySoC/
 └── images/                    # (optional) Add for documentation, diagrams
     └── arch_diagram.png     # Example: SoC block diagram
 
-```
-
-## LAB WORK VSDBABYSoC
-1. Pre-requisites:
-``` bash
-$ cd VSDBabySoC/
-$ python -m venv my-venv
-$ python3 -m venv my-venv
-$ my-venv/bin/pip install pyyaml click sandpiper-saas
-$ make pre_synth_sim
-$ source my-venv/bin/activate
-$ make pre_synth_sim
-```
-
+``` 
 
 ## RVMYTH modeling
 
@@ -168,6 +155,9 @@ pip install pyyaml click sandpiper-saas
 # Step D: Convert rvmyth.tlv to Verilog
 sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
 ```
+The above conversion will be reflected in the output director in `/src/module`
+
+<img width="825" height="681" alt="Image" src="https://github.com/user-attachments/assets/a9123673-02c3-49e8-9d33-0c79844b5f22" />
 
 ``` bash
 
