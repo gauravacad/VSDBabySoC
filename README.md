@@ -1,5 +1,8 @@
 ## What is a SoC?
-- In general an Integrated Circuit (aka IC) that integrates multiple components of asystem onto a single chip is SOC (System-on-Chip).
+- In general an Integrated Circuit (aka IC) that integrates multiple components of asystem onto a single chip is SOC (System-on-Chip).Example the best VSDSquadron Ultra MADE IN INDIA Board
+
+  <img width="768" height="481" alt="image" src="https://github.com/user-attachments/assets/ea5d367b-1b61-4366-b4be-3f7d80dd1413" />
+
 - In addition to IC, SoC consists of software and interconnection structure for integration.
 - A System on a Chip (SoC) is like a mini-computer built on a single chip.
 - Instead of having separate parts for each function, an SoC combines everything into one small package. In general, the design flow of SoCs consists of: Hardware and Software Modules
