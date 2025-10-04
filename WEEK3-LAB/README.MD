@@ -229,10 +229,10 @@ iverilog -o output/post_synthesis/post_synth_sim.out -DPOST_SYNTH_SIM  -I ./src/
 
 In this picture we can see the following signals:
 
-**CLK**: This is the input CLK signal of the RVMYTH core. This signal comes from the PLL, originally.
-**reset**: This is the input reset signal of the RVMYTH core. This signal comes from an external source, originally.
-**OUT**: This is the output OUT signal of the VSDBabySoC module. This signal comes from the DAC (due to simulation restrictions it behaves like a digital signal which is incorrect), originally.
-*OUT[9:0]**: This is the 10-bit output [9:0] OUT port of the RVMYTH core. This port comes from the RVMYTH register #17, originally.
+- **CLK**: This is the input CLK signal of the RVMYTH core. This signal comes from the PLL, originally.
+- **reset**: This is the input reset signal of the RVMYTH core. This signal comes from an external source, originally.
+- **OUT**: This is the output OUT signal of the VSDBabySoC module. This signal comes from the DAC (due to simulation restrictions it behaves like a digital signal which is incorrect), originally.
+- *OUT[9:0]**: This is the 10-bit output [9:0] OUT port of the RVMYTH core. This port comes from the RVMYTH register #17, originally.
 - This is a real datatype wire which can simulate analog values. It is the output wire real OUT signal of the DAC module. This signal comes from the DAC, originally.
 
 ## Debugging the error 
@@ -242,7 +242,17 @@ In this picture we can see the following signals:
 - In $YOUR_PDK_PATH/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v file we should manually correct endif SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V to endif //SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V.
 - We can simulate with the functional models by passing the FUNCTIONAL define to iverilog. Also we need to set UNIT_DELAY macro to some value. As a result we'll have iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 <THE SOURCE-CODEs   TO BE COMPILED.
 
+# Why Pre-Synthesis and Post-Synthesis?
+**1️⃣Pre-Synthesis Simulation:**
 
+  - Focuses only on verifying functionality based on the RTL code.
+  - Zero-delay environment, with events occurring on the active clock edge.
+    
+**2️⃣Post-Synthesis Simulation (GLS):**
+
+  - Uses the synthesized netlist (gate-level) to simulate both functionality and timing.
+  - Identifies timing violations and potential mismatches (e.g., unintended latches).
+  - Helps verify dynamic circuit behavior that static methods may miss.
 
 
 
