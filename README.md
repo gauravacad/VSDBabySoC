@@ -68,25 +68,8 @@ Steps in designing a SoC
 <img width="309" height="37" alt="image" src="https://github.com/user-attachments/assets/c0233329-c0e1-4678-8648-bd335087b6a3" />
 
 
-<img width="724" height="146" alt="image" src="https://github.com/user-attachments/assets/440820e0-f198-4428-ae84-bbc88f5b4cd0" />
-Logic blocks of a typical processor
-
-<img width="719" height="259" alt="image" src="https://github.com/user-attachments/assets/2af7bea0-082d-4f96-830f-2bd3281fabfe" />
-Five-stage RISC processor pipeline
 
 
-<img width="894" height="101" alt="image" src="https://github.com/user-attachments/assets/1656f542-0766-428b-84aa-3788e5f2e566" />
-
-The die size of a SoC, expressed in mm^2 , depends on the technology used. As indicated above, a wafer will contain multiple dies, 
-and the die number (dies-per-wafer) represents the ratio of the size of the wafer to the size of a die within it:
-
-<img width="491" height="112" alt="image" src="https://github.com/user-attachments/assets/c045efaf-7809-483e-ad3c-b3f39a926dcd" />
-
-
-## Pipeline Latency and Throughput
-
-
-## System-on-Chip Costs
 
 
 
