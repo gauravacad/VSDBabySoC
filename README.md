@@ -140,44 +140,23 @@ Here **RISC-V core (rvmyth)** is an open architecture enables us to create proce
 
 
  [Basic Architecture of the VSDBabySoC — SoC based on RVMYTH ](https://github.com/manili/VSDBabySoC/tree/main)
-## Installtion and Overview of Sandpiper
-- SandPiper is a code generator that generates readable, well-structured, Verilog or SystemVerilog code from the given TL-Verilog code.
-- SandPiper SaaS Edition runs as a microservice in the cloud to support easy open-source development. Install Sanpiper SaaS Edition for this project.
-- To run locally, SandPiper Education Edition can be requested from RedwoodEDA
+
+## RVMYTH modeling
+
+As we mentioned in [What is RVMYTH](#what-is-rvmyth) section, RVMYTH is designed and created by the TL-Verilog language. So we need a way for compile and trasform it to the Verilog language and use the result in our SoC. Here the `sandpiper-saas` could help us do the job.
+
+1. [Here](https://github.com/shivanishah269/risc-v-core) is the repo we used as a reference to model the RVMYTH
+2. [Here](https://github.com/vsdip/rvmyth_avsddac_interface?tab=readme-ov-file) is similar Repo which can also be looked upon for the same.
+
+## PLL and DAC modeling
+
+It is not possible to sythesis an analog design with Verilog, yet. But there is a chance to simulate it using `real` datatype. We will use the following repositories to model the PLL and DAC cores:
+
+  1. [Here](https://github.com/vsdip/rvmyth_avsdpll_interface) is the repo we used as a reference to model the PLL
+  2. [Here](https://github.com/vsdip/rvmyth_avsddac_interface) is the repo we used as a reference to model the DAC
+
+**CAUTION:** In the beginning of the project, we get our verilog model of the PLL from [here](https://github.com/vsdip/rvmyth_avsdpll_interface). However, by proceeding the project to the physical design flow we realize that this model needs a little changes to become sufficient for a real IP core. So we changed it a little and created a new model named `AVSDPLL` based on [this](https://github.com/lakshmi-sathi/avsdpll_1v8) IP.
+
+
 -
-### Steps to convert TL-Verilog to Verilog or SystemVerilog
 
-```bash
-1. First install Sandpiper SaaS (https://pypi.org/project/sandpiper-saas/)
-$ git clone https://github.com/shivanishah269/vsdfpga.git
-$ cd vsdfpga/verilog
-$ sandpiper-saas -i rvmyth.tlv -o rvmyth.v --iArgs
-
-```
-### Steps to convert TL-Verilog to Verilog or SystemVerilog
-``` bash
-$ iverilog rvmyth_pll_tb.v rvmyth_pll.v clk_gate.v
-$ ./a.out
-$ gtkwave rvmyth_pll.vcd
-```
-### Tools
-1. Makerchip:
-
-- Makerchip is a free web-based IDE as well as available as makerchip-app, a virtual desktop application for developing high-quality integrated circuits.
-- You can code, compile, simulate, and debug Verilog designs, all from your browser. Your code, block diagrams, and waveforms are tightly integrated.
-
-2. Icarus Verilog:
-
-- Icarus Verilog is a Verilog simulation and synthesis tool.
-
-
-
-
-## Introduction to ABI
-An Application Binary Interface is a set of rules enforced by the Operating System on a specific architecture. So, Linker converts relocatable machine code to absolute machine code via ABI interface specific to the architecture of machine.
-So, it is system call interface used by the application program to access the registers specific to architecture. Overhere the architecture is RISC-V, so to access 32 registers of RISC-V below is the table which shows the calling convention (ABI name) given to registers for the application programmer to use. 
-
-
-3. GTKWave:
-
-- GTKWave is a waveform viewer.
