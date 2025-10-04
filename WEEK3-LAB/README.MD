@@ -44,7 +44,6 @@ VSDBabySoC is a compact RISC-V based System-on-Chip (SoC) designed to integrate 
 Fig: [Basic Architecture of the VSDBabySoC](https://github.com/manili/VSDBabySoC/tree/main)
 
 ---
-
 ### Key Components
 - **PLL (avsdpll_1v8)**
 - **RISC-V Core (rvmyth)**
@@ -136,9 +135,27 @@ pip install pyyaml click sandpiper-saas
 # Step D: Convert rvmyth.tlv to Verilog
 sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
 ```
-The above conversion will be reflected in the output director in `/src/module`
+The above conversion will be reflected in the output director in `/src/module` it uses the tool Sandpiper for conversion.
+- SandPiper is a code generator that generates readable, well-structured, Verilog or SystemVerilog code from the given TL-Verilog code.
+- SandPiper SaaS Edition runs as a microservice in the cloud to support easy open-source development. Install Sanpiper SaaS Edition for this project.
+- To run locally, SandPiper Education Edition can be requested from RedwoodEDA.
 
 <img width="825" height="681" alt="Image" src="https://github.com/user-attachments/assets/a9123673-02c3-49e8-9d33-0c79844b5f22" />
+
+# Pre-Synthesis Simulation:
+
+Before synthesis, the RTL design was verified using a testbench (testbench.v) that instantiates the vsdbabysoc module and applies a series of stimulus to validate its functionality. The simulation was run using Icarus Verilog, and the waveform was inspected in GTKWave to ensure correct operation. the following command is executed while the paths to the current directory and the files required must be at available for proper execution without failure.
+
+``` bash
+$ cd ~/vsd/VSDBabySoC/
+$ mkdir -p output/pre_synth_sim
+$ iverilog -o ~/vsd/VSDBabySoC/output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM -I ~/vsd/VSDBabySoC/src/include -I ~/vsd/VSDBabySoC/src/module ~/vsd/VSDBabySoC/src/module/testbench.v
+```  
+- DPRE_SYNTH_SIM defines the macro PRE_SYNTH_SIM for conditional compilation., which can be used inside Verilog files like: 
+- -I<directory>: Adds an include directory for Verilog source files that use \include "file.v"` directives.
+- if we wont include the -I then it will lands to error for .Vh files and other verilog files which are called by top vsdbabysoc module.
+
+<img width="818" height="219" alt="Image" src="https://github.com/user-attachments/assets/84e05ba5-afcf-45f1-a060-9900a0d918fd" />
 
 ``` bash
 
