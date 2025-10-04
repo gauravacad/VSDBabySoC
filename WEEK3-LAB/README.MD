@@ -228,6 +228,11 @@ iverilog -o output/post_synthesis/post_synth_sim.out -DPOST_SYNTH_SIM  -I ./src/
 
 <img width="920" height="364" alt="Image" src="https://github.com/user-attachments/assets/c19af11d-f050-46eb-a348-a97597fe948d" />
 
+- Finally we are getting Post syntheis output thatis GLS.
+
+<img width="1006" height="467" alt="Image" src="https://github.com/user-attachments/assets/5736b5af-994d-4c54-9992-57c598f957c1" />
+
+
 ## Debugging the error 
 
 - The `rvmyth` core uses `include` directives to import Verilog header files (`.vh`). Yosys was not aware of the `src/include/` directory where these files are located.
