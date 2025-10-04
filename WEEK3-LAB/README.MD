@@ -197,24 +197,19 @@ we use yosys for Synthesizing our design.
 <img width="559" height="365" alt="Image" src="https://github.com/user-attachments/assets/af93a143-f0ce-4723-8164-8dfb0b8fb455" />
 
 ``` bash
-
-read_liberty -lib src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_liberty -lib src/lib/avsddac.lib
-read_liberty -lib src/lib/avsdpll.lib
 read_verilog src/module/vsdbabysoc.v
 read_verilog -I src/include src/module/rvmyth.v
 read_verilog -I src/include src/module/clk_gate.v
-read_verilog src/module/avsddac_stub.v
-read_verilog src/module/avsdpll_stub.v
+read_liberty -lib src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -lib src/lib/avsddac.lib
+read_liberty -lib src/lib/avsdpll.lib
+
 synth -top vsdbabysoc
+write_verilog -noattr reports/vsdbabysoc_netlist.v
+show vsdbabysoc
 
 dfflibmap -liberty src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 abc -liberty src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-opt clean -purge
-flatten
-
-write_verilog -noattr reports/vsdbabysoc_netlist.v
-show vsdbabysoc
 ```
 - The output is generated in the post_synthesis folder but for running the GLS for netlist file we need to copy the same in the `./src/module` folder. 
 - also we nned to copy our verilog_modules files. 
