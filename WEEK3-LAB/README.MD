@@ -162,6 +162,16 @@ $ iverilog -o ./output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM -I ./src/
 
 <img width="829" height="252" alt="Image" src="https://github.com/user-attachments/assets/5255cf15-9bd1-4f50-8bf3-da26cbdc4c47" />
 
+### Running the next step to generate the VCD file
+
+<img width="824" height="237" alt="Image" src="https://github.com/user-attachments/assets/d821b28a-1504-483a-b8db-6c076b5c258d" />
+
+### Invoking the GTKwave to see the RTL simulation Also making the output view for analog type data.
+
+<img width="908" height="825" alt="Image" src="https://github.com/user-attachments/assets/9e044de4-8953-4e98-aae6-d95f586d4ed9" />
+
+
+<img width="1149" height="502" alt="Image" src="https://github.com/user-attachments/assets/287b4432-0c1a-47a9-88a7-c0ae6ad73504" />
 
 ``` bash
 
