@@ -227,6 +227,13 @@ iverilog -o output/post_synthesis/post_synth_sim.out -DPOST_SYNTH_SIM  -I ./src/
 
 <img width="1006" height="467" alt="Image" src="https://github.com/user-attachments/assets/5736b5af-994d-4c54-9992-57c598f957c1" />
 
+In this picture we can see the following signals:
+
+**CLK**: This is the input CLK signal of the RVMYTH core. This signal comes from the PLL, originally.
+**reset**: This is the input reset signal of the RVMYTH core. This signal comes from an external source, originally.
+**OUT**: This is the output OUT signal of the VSDBabySoC module. This signal comes from the DAC (due to simulation restrictions it behaves like a digital signal which is incorrect), originally.
+*OUT[9:0]**: This is the 10-bit output [9:0] OUT port of the RVMYTH core. This port comes from the RVMYTH register #17, originally.
+- This is a real datatype wire which can simulate analog values. It is the output wire real OUT signal of the DAC module. This signal comes from the DAC, originally.
 
 ## Debugging the error 
 
@@ -234,4 +241,11 @@ iverilog -o output/post_synthesis/post_synth_sim.out -DPOST_SYNTH_SIM  -I ./src/
 - Add the `-I src/include` flag to required read_verilog commands in the Yosys script. This tells Yosys to add that directory to its search path for header files.
 - In $YOUR_PDK_PATH/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v file we should manually correct endif SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V to endif //SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V.
 - We can simulate with the functional models by passing the FUNCTIONAL define to iverilog. Also we need to set UNIT_DELAY macro to some value. As a result we'll have iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 <THE SOURCE-CODEs   TO BE COMPILED.
+
+
+
+
+
+## Conclusion
+This process successfully transformed the vsdbabysoc RTL design into a verified, synthesizable gate-level netlist. The debugging journey highlighted the importance of correctly handling IP integration, from Verilog header paths to precise port-matching in hierarchical designs. The identical pre- and post-synthesis simulation results provide high confidence in the netlist to move in the stage.
 
