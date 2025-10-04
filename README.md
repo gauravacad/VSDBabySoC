@@ -91,10 +91,7 @@ Figure 1 General computer architecture with minimum of elements (global hardware
 <img width="309" height="37" alt="image" src="https://github.com/user-attachments/assets/c0233329-c0e1-4678-8648-bd335087b6a3" />
 
 
-
-
-
-1. # VSDBabySoC
+# 1 VSDBabySoC
 VSDBabySoC is a small yet powerful RISCV-based System-on-Chip (SoC).
 
 - **The Key Components**: Includes a **current source**, **a PLL (avsdpll\_1v8)**, an embedded **RISC-V core (rvmyth)**, an **ADC/DAC (avsddac\_3v3)**, and an **SPI interface**.
@@ -171,8 +168,13 @@ It is not possible to sythesis an analog design with Verilog, yet. But there is 
   1. [Here](https://github.com/vsdip/rvmyth_avsdpll_interface) is the repo we used as a reference to model the PLL
   2. [Here](https://github.com/vsdip/rvmyth_avsddac_interface) is the repo we used as a reference to model the DAC
 
-**CAUTION:** In the beginning of the project, we get our verilog model of the PLL from [here](https://github.com/vsdip/rvmyth_avsdpll_interface). However, by proceeding the project to the physical design flow we realize that this model needs a little changes to become sufficient for a real IP core. So we changed it a little and created a new model named `AVSDPLL` based on [this](https://github.com/lakshmi-sathi/avsdpll_1v8) IP.
+**NOTE:** We get our verilog model of the PLL from [here](https://github.com/vsdip/rvmyth_avsdpll_interface). However, by proceeding the project to the physical design flow we realize that this model needs a little changes to become sufficient for a real IP core. So we changed it a little and created a new model named `AVSDPLL` based on [this](https://github.com/lakshmi-sathi/avsdpll_1v8) IP.
 
-
+### Popular SoCs You Might Know
+- **VSD**: VSDSquadron PRO, VSDSquadron Ultra (MAde in India with C-DAC’s VEGA Processor),  Mini/ FM boards.
+- **Apple A-Series**: Powers iPhones and iPads.
+- **Qualcomm Snapdragon**: Found in many Android phones.
+- **Samsung Exynos**: Built for Samsung devices.
+- **NVIDIA Tegra**: Powers devices like the Nintendo Switch.
 -
 
