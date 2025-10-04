@@ -1,10 +1,6 @@
 ## I What is a SoC?
 - In general an Integrated Circuit (a.ak IC) that integrates multiple components of asystem onto a single chip is SOC (System-on-Chip).
 - In addition to IC, SoC consists of software and interconnection structure for integration.
-- SOCs usually have die sizes of about 10-15 mm on aside like our babySOC as shown in picture
-
-<img width="1461" height="1467" alt="image" src="https://github.com/user-attachments/assets/5f5698c1-86e4-4eb1-ade0-db6e1051f14b" />
-
 
 ## II What are the elements of a SoC?
 > These components typically include:
@@ -137,6 +133,10 @@ Once RTL description is done, then the process of conversion of RTL to physical 
 Here **RISC-V core (rvmyth)** is an open architecture enables us to create processors highly tailored for specific computational challenges. 
 
 <img width="900" height="900" alt="image" src="https://github.com/user-attachments/assets/869b0def-220a-49db-bbda-cd3ff7611e59" />
+
+- SOCs usually have die sizes of about 10-15 mm on aside like our babySOC as shown in picture
+
+<img width="1461" height="1467" alt="image" src="https://github.com/user-attachments/assets/5f5698c1-86e4-4eb1-ade0-db6e1051f14b" />
 
 
  [Basic Architecture of the VSDBabySoC — SoC based on RVMYTH ](https://github.com/manili/VSDBabySoC/tree/main)
