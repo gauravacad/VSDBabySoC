@@ -224,7 +224,7 @@ iverilog -o ./output/post_synthesis/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTI
 <img width="920" height="364" alt="Image" src="https://github.com/user-attachments/assets/c19af11d-f050-46eb-a348-a97597fe948d" />
 
 - Finally we are getting Post syntheis output that is GLS.
-## Pre-Synthesis gtkwave Screenshot:
+## Post-Synthesis gtkwave Screenshot:
 
 <img width="1006" height="467" alt="Image" src="https://github.com/user-attachments/assets/5736b5af-994d-4c54-9992-57c598f957c1" />
 
@@ -259,6 +259,13 @@ As Real variables are not supported during synthesis, so `VSDBabySoC.OUT` must b
 The below picture proves that the `VSDBabySoC.OUT` shows digital behaviour (which is 1's and 0's), whereas DAC.OUT shows analog behaviour but if we carefully note it , the continuous signal is made up of small rise and fall steps which together seen as a continuous signal.
 
 <img width="1001" height="648" alt="Image" src="https://github.com/user-attachments/assets/952e2d4c-f938-4e78-ad00-20dad6877642" />
+
+Also, In this picture we can see the following signals:
+OUT: This is the output OUT signal of the VSDBabySoC module. This signal comes from the DAC (due to simulation restrictions it behaves like a digital signal which is incorrect), originally.
+OUT[9:0]: This is the 10-bit output [9:0] OUT port of the RVMYTH core. This port comes from the RVMYTH register `#17`, originally.
+OUT: This is a real datatype wire which can simulate analog values. It is the output wire real OUT signal of the DAC module. This signal comes from the DAC, originally.
+
+<img width="1257" height="586" alt="Image" src="https://github.com/user-attachments/assets/b27c3b85-255f-41b9-8076-ca00c8a083a6" />
 
 
 ## Conclusion
