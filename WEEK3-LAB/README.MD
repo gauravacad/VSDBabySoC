@@ -218,7 +218,7 @@ $ # current path -> vsdflow/VSDBabySoC/ for post simulation after yosys synthesi
 
 iverilog -o ./output/post_synthesis/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I ./src/include -I ./src/module ./src/module/testbench.v
 
-# this will generate the `post_synth_sim.out` as stated in above command.
+# this will generate the `post_synth_sim.out` as stated in above command. We can simulate with the functional models by passing the FUNCTIONAL define to iverilog. Also we need to set UNIT_DELAY macro to some value. As a result we'll have iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 <THE SOURCE-CODEs TO BE COMPILED.
 ```
 
 <img width="920" height="364" alt="Image" src="https://github.com/user-attachments/assets/c19af11d-f050-46eb-a348-a97597fe948d" />
@@ -236,7 +236,10 @@ iverilog -o ./output/post_synthesis/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTI
 - The `rvmyth` core uses `include` directives to import Verilog header files (`.vh`). Yosys was not aware of the `src/include/` directory where these files are located.
 - Add the `-I src/include` flag to required read_verilog commands in the Yosys script. This tells Yosys to add that directory to its search path for header files.
 - In $YOUR_PDK_PATH/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v file we should manually correct endif SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V to endif //SKY130_FD_SC_HD__LPFLOW_BLEEDER_FUNCTIONAL_V.
-- We can simulate with the functional models by passing the FUNCTIONAL define to iverilog. Also we need to set UNIT_DELAY macro to some value. As a result we'll have iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 <THE SOURCE-CODEs   TO BE COMPILED.
+
+<img width="900" height="676" alt="Image" src="https://github.com/user-attachments/assets/a32e5b1a-0474-419f-90da-aa075f33bb26" />
+
+
 
 # Why Pre-Synthesis and Post-Synthesis?
 **1️⃣Pre-Synthesis Simulation:**
