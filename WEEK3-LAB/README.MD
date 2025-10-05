@@ -1,4 +1,4 @@
-# VSDBabySoC Simulation and Syntheis 
+# VSDBabySoC Simulation and Synthesis
 ## Week 3 LAB Task – VSDBabySoC
 
 ### 1. Basic RTL Simulation
