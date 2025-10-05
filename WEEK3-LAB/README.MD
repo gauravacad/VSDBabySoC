@@ -203,31 +203,35 @@ read_verilog -I src/include src/module/clk_gate.v
 read_liberty -lib src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_liberty -lib src/lib/avsddac.lib
 read_liberty -lib src/lib/avsdpll.lib
-
 synth -top vsdbabysoc
-write_verilog -noattr reports/vsdbabysoc_netlist.v
-show vsdbabysoc
-
 dfflibmap -liberty src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 abc -liberty src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+write_verilog -noattr reports/vsdbabysoc_netlist.v
+
 ```
 - The output is generated in the post_synthesis folder but for running the GLS for netlist file we need to copy the same in the `./src/module` folder. 
 - also we nned to copy our verilog_modules files. 
 - copy the generated yosys output netlist file vsdbabysoc.synth.v to ./src/module/
 
 ```
-$ vsdflow/
-iverilog -o output/post_synthesis/post_synth_sim.out -DPOST_SYNTH_SIM  -I ./src/include/ -I ./src/module/ ./src/module/testbench.v
+$ # current path -> vsdflow/VSDBabySoC/ for post simulation after yosys synthesis
+
+iverilog -o ./output/post_synthesis/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I ./src/include -I ./src/module ./src/module/testbench.v
+
 # this will generate the `post_synth_sim.out` as stated in above command.
 ```
 
 <img width="920" height="364" alt="Image" src="https://github.com/user-attachments/assets/c19af11d-f050-46eb-a348-a97597fe948d" />
 
-- Finally we are getting Post syntheis output thatis GLS.
+- Finally we are getting Post syntheis output that is GLS.
+## Pre-Synthesis gtkwave Screenshot:
 
 <img width="1006" height="467" alt="Image" src="https://github.com/user-attachments/assets/5736b5af-994d-4c54-9992-57c598f957c1" />
 
 ## Debugging the error 
+
+<img width="921" height="393" alt="Image" src="https://github.com/user-attachments/assets/d386cf81-6df6-48b7-a61a-f8a2900f95a4" />
+
 
 - The `rvmyth` core uses `include` directives to import Verilog header files (`.vh`). Yosys was not aware of the `src/include/` directory where these files are located.
 - Add the `-I src/include` flag to required read_verilog commands in the Yosys script. This tells Yosys to add that directory to its search path for header files.
@@ -246,6 +250,12 @@ iverilog -o output/post_synthesis/post_synth_sim.out -DPOST_SYNTH_SIM  -I ./src/
   - Identifies timing violations and potential mismatches (e.g., unintended latches).
   - Helps verify dynamic circuit behavior that static methods may miss.
 
+## Important Note:
+
+As Real variables are not supported during synthesis, so `VSDBabySoC.OUT` must be a wire, which behaves digitally in simulation. To observe analog behavior, use DAC.OUT
+The below picture proves that the `VSDBabySoC.OUT` shows digital behaviour (which is 1's and 0's), whereas DAC.OUT shows analog behaviour but if we carefully note it , the continuous signal is made up of small rise and fall steps which together seen as a continuous signal.
+
+<img width="1001" height="648" alt="Image" src="https://github.com/user-attachments/assets/952e2d4c-f938-4e78-ad00-20dad6877642" />
 
 
 ## Conclusion
