@@ -192,3 +192,10 @@ It is not possible to sythesis an analog design with Verilog, yet. But there is 
 | **Size**             | Small, compact                            | Larger (uses multiple chips on motherboard)            |
 | **Power Efficiency** | Highly efficient, low power               | Typically uses more power                              |
 | **Performance**      | Optimized for specific tasks              | More flexible, higher general performance              |
+
+# Acknowledgement 
+- A big thanks to @Kunal Sir and team.
+- RedwoodEDA tools.
+- Makers of gitrepo for our and others help.
+- All direct and indirect helpers to achieve this week goal. Many thanks 👍.
+
