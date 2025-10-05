@@ -70,7 +70,7 @@ A **Digital-to-Analog Converter (DAC)** converts a **digital signal into an anal
 - Ultra-high-speed DACs are used in **optical communication systems**.  
 
 # VSDBabySoC Modeling
-Please note that in the following sections we will mention some repos that we used to model the SoC. However the main source code is resided in [Source-Code Directory](src) and these modules are in [Modules Sub-Directory](src/module).
+Please note that in the following sections we will mention some repos that we used to model the SoC.The source directory and the folder contained are explained below.
 
 ## Step by step modeling walkthrough
 
