@@ -1,5 +1,5 @@
 ## What is a SoC?
-- In general an Integrated Circuit (aka IC) that integrates multiple components of asystem onto a single chip is SOC (System-on-Chip).Example the best VSDSquadron Ultra MADE IN INDIA Board
+- In general an Integrated Circuit (aka IC) that integrates multiple components of a system onto a single chip is SOC (System-on-Chip). The best Example is VSDSquadron Ultra which is one of completely MADE IN INDIA Board.
 
   <img width="768" height="481" alt="image" src="https://github.com/user-attachments/assets/ea5d367b-1b61-4366-b4be-3f7d80dd1413" />
 
